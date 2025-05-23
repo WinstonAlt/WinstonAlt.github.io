@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Breach Detected</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: lime;
+      font-family: monospace;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #terminal {
+      padding: 20px;
+      font-size: 1.2em;
+      white-space: pre-wrap;
+    }
+
+    .warning {
+      color: red;
+      font-weight: bold;
+      font-size: 2em;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
+</head>
+<body onclick="goFullscreen(); startSimulation();">
+
+  <div id="terminal">
+    <p class="warning">⚠ SYSTEM BREACH DETECTED ⚠</p>
+    <p>Click anywhere to continue...</p>
+  </div>
+
+  <audio id="alarm" src="your-alarm.mp3" loop></audio>
+
+  <script>
+    function goFullscreen() {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    }
+
+    function startSimulation() {
+      const terminal = document.getElementById("terminal");
+      const audio = document.getElementById("alarm");
+      audio.play();
+
+      let lines = [
+        "Injecting payload.exe...",
+        "Encrypting files...",
+        "Stealing passwords...",
+        "Uploading data to dark web...",
+        "System lockdown initiated...",
+        "Access denied.",
+        "Attempting to bypass...",
+        "FAILURE. SELF-DESTRUCT SEQUENCE INITIATED...",
+      ];
+
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < lines.length) {
+          terminal.innerHTML += "\n" + lines[i++];
+        } else {
+          clearInterval(interval);
+          terminal.innerHTML += "\n\n💀 SYSTEM FAILURE 💀";
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
