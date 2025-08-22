@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fake Cloudflare CAPTCHA</title>
+<title>CAPTCHA</title>
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -20,6 +20,7 @@ body {
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
 }
 button {
     margin-top: 20px;
@@ -40,7 +41,7 @@ button:hover {
 <div class="captcha-box">
     <h3>Verify you are human</h3>
     <p>Click the box below to continue</p>
-    <button onclick="alert('Verified!')">I am not a robot</button>
+    <button onclick="window.location.href='https://example.com';">I am not a robot</button>
 </div>
 
 </body>
