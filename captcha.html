@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Cloudflare CAPTCHA</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #f2f3f5;
+}
+.captcha-box {
+    background: white;
+    border: 1px solid #dcdcdc;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0070f3;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #005ac1;
+}
+</style>
+</head>
+<body>
+
+<div class="captcha-box">
+    <h3>Verify you are human</h3>
+    <p>Click the box below to continue</p>
+    <button onclick="alert('Verified!')">I am not a robot</button>
+</div>
+
+</body>
+</html>
